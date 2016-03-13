@@ -1,0 +1,44 @@
+function 0x80480d8 (.text) {
+    0x80480d8: esp -= 16
+    0x80480db: *(esp) = 10
+    0x80480e2: call (.text) 0x804810d
+    0x80480e7: *(esp) = 1
+    0x80480ee: *(esp + 4) = 0x80491bc "Welcome to 0CTF 2016!\n"
+    0x80480f6: *(esp + 8) = 22
+    0x80480fe: call (.text) 0x8048135
+    0x8048103: call (.text) 0x804815a
+    0x8048108: call (.text) ret_0x804814d
+    0x804810d: eax = 27
+    0x8048112: ebx = *(esp + 4)
+    0x8048116: int 128 ; alarm(ebx)
+    # 0x8048118: test eax, eax
+    # 0x804811a: js 0x804814d
+    if (eax > 0) {
+        ret_0x804811c:
+        0x804811c: ret
+    }
+    ret_0x804814d:
+    0x804814d: eax = 1
+    0x8048152: ebx = 0
+    0x8048157: int 128 ; exit(0x0)
+    0x8048159: hlt
+    0x804815a: esp -= 48
+    0x804815d: *(esp) = 0
+    0x8048164: eax = esp + 16
+    0x8048168: *(esp + 4) = eax
+    0x804816c: *(esp + 8) = 52
+    0x8048174: call (.text) 0x804811d
+    0x8048179: *(esp) = 1
+    0x8048180: *(esp + 4) = 0x80491d3 "Good Luck!\n"
+    0x8048188: *(esp + 8) = 11
+    0x8048190: call (.text) 0x8048135
+    0x8048195: eax = 3735928495
+    0x804819a: ecx = 3735928495
+    0x804819f: edx = 3735928495
+    0x80481a4: ebx = 3735928495
+    0x80481a9: esi = 3735928495
+    0x80481ae: edi = 3735928495
+    0x80481b3: ebp = 3735928495
+    0x80481b8: esp += 48
+    0x80481bb: ret
+}
