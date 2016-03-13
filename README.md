@@ -16,6 +16,7 @@ This writup is offered by the [HexpressoTeam](http://hexpresso.github.io/),
 The exploit has been done by Beuc and  [@chaign\_c](https://twitter.com/chaign_c)
 
 A lot of fun here since it was one of the most crazy exploit we ever made.
+ TLDR: [exploit.py](/final_exploit.py)
 
 ### Step 0: war of information
     $ ls -lh warmup
@@ -44,7 +45,7 @@ By starting a dmesg -w in a second terminal, we are notified of all segv and kno
 
 It's time to read some asm:
 
-    $ objdump -d -M warmup > [out.s](/out.s)
+    $ objdump -d -M warmup > out.s
     $ ROPGadget --binary warmup --depth 60
 
 ##### Constraint:
@@ -99,6 +100,8 @@ We show you this little ascii art so you can get how gadgets fit and rely on eac
 
 There is a lot more going on I let you checkout the exploit [exploit](/final_exploit.py)
 If you have questions don't hesitate to contact me on irc or twitter. :D
-There are a full bunch of file on the repository so you can see that we passed more time than we want to admit and you can investigate allsteps before having a working exploit on remote.
+
+There are a full bunch of file on the repository so you can see that we passed more time than we want to admit and you can investigate all steps we did before having a working exploit on remote.
+
 ----
 [@chaign\_c](https://twitter.com/chaign_c) from [HexpressoTeam](http://hexpresso.github.io/)
