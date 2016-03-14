@@ -56,7 +56,7 @@ We can't use exec because it's a sandbox only open,read,write syscall are reacha
 
 The vulnerability allow us to control a rop context stack size of only 5*4 bytes size aka 5 address. We better have a short payload or try to expand our power.
 
-### Step 4: I wan't it bigger!
+### Step 4: I want it bigger!
 
 We only have 5*4 bytes to do our exploit, it's not enough to perform a open->read->write. So what can we do about it ?
 Make it bigger by reading again and stack pivot was the first idea but it sound like with our gadgets it's not possible. So we thought about code reuse, in fact a ret near the entry point make the program restart again and we can exploit it again ! at each loop we can send one gadget and his parameters.
